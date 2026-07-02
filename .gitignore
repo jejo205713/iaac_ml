@@ -1,0 +1,24 @@
+# --- trained model weights: rebuild via run_all.sh (train_transformer.py + export_onnx.py) ---
+# Excluded deliberately: 3× ~256 MB, over GitHub's 100 MB/file limit.
+*.onnx
+*.safetensors
+*.bin
+model/hf/*.safetensors
+
+# --- quarantined / unsafe real data: NEVER publish (held out on purpose) ---
+_quarantine_*.jsonl
+*_unsafe*.jsonl
+
+# --- python ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# --- nested VCS from vendored datasets/ (upstream history stripped; see DATA_SOURCES.md) ---
+datasets/**/.git/
+
+# --- run artifacts / scratch ---
+*.log
+.DS_Store

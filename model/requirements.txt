@@ -1,0 +1,5 @@
+# IAAC command-intent scorer — INFERENCE deps only (offline, CPU).
+# score.py needs nothing from torch/transformers.
+onnxruntime>=1.17
+numpy>=1.24
+tokenizers>=0.15

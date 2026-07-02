@@ -1,0 +1,16 @@
+{
+  "labels": [
+    "BENIGN",
+    "ADMIN",
+    "RECON",
+    "EXPLOIT",
+    "PERSISTENCE",
+    "EXFILTRATION"
+  ],
+  "temperature": 1.3608951568603516,
+  "maxlen": 96,
+  "base": "distilbert-base-uncased",
+  "unknown_threshold": 0.55,
+  "model_version": "iaac-scorer-v1.0.0",
+  "test_macro_f1": 0.7663
+}
