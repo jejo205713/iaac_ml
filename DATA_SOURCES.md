@@ -11,6 +11,19 @@ lean — but the *derived* command rows remain, so their licenses still apply.
 > can constrain a commercial product. **Verify each upstream license** for your
 > use case — the labels below are best-effort, not legal advice.
 
+## Labeling policy (safety-biased)
+
+**When in doubt, flag — never allow.** A command only earns a `BENIGN` or `ADMIN`
+label if it is *certainly* safe. Any command with genuine uncertainty or dual-use
+capability (remote data transfer like `scp user@host:`, destructive verbs like
+`docker rm` / `rm -rf`, security-control disable like `systemctl stop auditd`) is
+labeled with its attack class so the model learns to flag it — downstream that
+yields block/review, not silent allow. We accept the occasional false flag (extra
+review) to avoid a false allow (a missed attack). This mirrors the runtime
+guardrail's own bias ("prefer false-PROTECTED over false-None"). Known-safe ops
+(`chmod 644 nginx.conf`, `git status`, `kubectl get`) stay BENIGN/ADMIN — the
+policy is about *uncertainty*, not about touching sensitive paths.
+
 ## Sources present in `dataset.jsonl` (by `source` field)
 
 ### Original to this project (no third-party license)
